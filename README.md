@@ -10,9 +10,7 @@ The **Bells University Exeat Management System (BUEMS) API** provides endpoints 
 - [Features](#features)
 - [Endpoints](#endpoints)
 - [Authentication](#authentication)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
+- [Installation and Usage](#installation_and_usage)
 - [License](#license)
 
 ## Overview
@@ -27,6 +25,7 @@ The BUEMS API powers the Bells University Exeat Management System, facilitating 
 - Administrative controls for approvals and reporting (under development)
 
 ## Endpoints
+For more information, run the API and visit the [API Documentation](http://127.0.0.1:8000/docs).
 
 ### Authentication
 
@@ -58,6 +57,7 @@ The BUEMS API powers the Bells University Exeat Management System, facilitating 
 - `GET /staff/approve/{exeat_id}` - Approve a specific exeat request.
 - `GET /staff/deny/{exeat_id}` - Deny a specific exeat request.
 
+
 Run the API, and refer to the [Swagger UI Documentation](http://127.0.0.1:8000/docs) for more details.
 
 ## Authentication
@@ -69,10 +69,55 @@ Example:
 Authorization: Bearer <your_token_here>
 ```
 
+## Installation and Usage
+
+This project uses [`uv`](https://github.com/astral-sh/uv) as its project manager.
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/definite-d/buems-api.git
+   ```
+
+2. **Navigate to the project directory:**
+
+   ```bash
+   cd buems-api
+   ```
+
+3. **Install dependencies:**
+
+   **With `uv`:**
+
+   Follow the [`uv` installation guide](https://docs.astral.sh/uv/getting-started/installation/) to install `uv` on your system. Once installed, synchronize the dependencies:
+
+   ```bash
+   uv sync
+
+   ```
+
+   **Without `uv`:**
+
+   Ensure you have Python [installed](https://python.org/downloads) on your system. Then, install the dependencies listed in `pyproject.toml`:
+
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+4. **Run the API:**
+
+   **With `uv`:**
+
+     ```bash
+     uv run fastapi dev buems
+     ```
+
+   **Without `uv`:**
+
+     ```bash
+     fastapi dev buems
+     ```
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
----
-
-For more information, run the API and visit the [API Documentation](http://127.0.0.1:8000/docs).
