@@ -1,0 +1,34 @@
+[project]
+authors = [
+    {name = "definite-d", email = "38317208+definite-d@users.noreply.github.com"},
+]
+requires-python = "<4.0,>=3.12"
+dependencies = [
+    "fastapi[standard]>=0.115.4,<1.0.0",
+    "sqlmodel<1.0.0,>=0.0.22",
+    "loguru<1.0.0,>=0.7.2",
+    "python-dotenv<2.0.0,>=1.0.1",
+    "passlib<2.0.0,>=1.7.4",
+    "pyjwt<3.0.0,>=2.9.0",
+    "bcrypt<5.0.0,>=4.2.1",
+    "email-validator<3.0.0,>=2.2.0",
+    "apscheduler<4.0.0,>=3.11.0",
+    "pillow<12.0.0,>=11.0.0",
+    "filetype<2.0.0,>=1.2.0",
+]
+name = "buems-api"
+version = "0.1.0"
+description = "Bells University Exeat Management System (BUEMS) API. The API powering the Bells University Exeat Management System (BUEMS). Developed by Divine Afam-Ifediogor et al. (Group 7)"
+readme = "README.md"
+
+[dependency-groups]
+dev = [
+    "alembic<2.0.0,>=1.14.0",
+    "black<25.0.0,>=24.10.0",
+    "ruff<1.0.0,>=0.7.2",
+    "isort<6.0.0,>=5.13.2",
+    "scalar-fastapi<2.0.0,>=1.0.3",
+]
+
+[tool.uv]
+default-groups = []
