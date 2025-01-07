@@ -5,6 +5,7 @@
 ./__init__.py
 .idea/
 .venv/
+.env
 buems.db
 migrations/versions/*
 static/profile_pictures/*
