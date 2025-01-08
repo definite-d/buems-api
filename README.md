@@ -1,4 +1,5 @@
 
+<p align="center" width="100%"><img src="https://github.com/user-attachments/assets/ee8c117a-802f-4db0-b752-4395a8a85334" /></p>
 
 # Bells University Exeat Management System (BUEMS) API
 
