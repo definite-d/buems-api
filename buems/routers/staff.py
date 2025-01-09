@@ -49,7 +49,7 @@ async def get_exeats(
         ),
     ] = 20,  # Page size, default to 20, max 100
     _status: Annotated[
-        f"{ExeatRequestStatusEnum.type_string} | None",
+        str,
         Query(
             alias="status",
             description="The approval status of the exeats to be returned.",

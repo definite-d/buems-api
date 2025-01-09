@@ -93,7 +93,7 @@ class UserCreate(BaseModel):
     based on user type (Student, Staff, or SecurityOperative).
     """
 
-    user_type: UserTypeEnum.type_string = Field(..., description="The user's type.")
+    user_type: str = Field(..., description="The user's type.")
     email: EmailStr = Field(..., description="The user's email address.")
     password: SecretStr = Field(..., description="The password chosen by the user.")
     first_name: str = Field(..., description="The user's first name.")

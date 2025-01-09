@@ -15,6 +15,7 @@ dependencies = [
     "apscheduler<4.0.0,>=3.11.0",
     "pillow<12.0.0,>=11.0.0",
     "filetype<2.0.0,>=1.2.0",
+    "scalar-fastapi>=1.0.3",
 ]
 name = "buems-api"
 version = "0.1.0"

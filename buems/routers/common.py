@@ -21,7 +21,7 @@ class ExeatRequestResponse(BaseModel):
     leave_end: datetime
     submission_time: datetime
     reason: str
-    status: f"{ExeatRequestStatusEnum.type_string} | None" = (
+    status: str = (
         ExeatRequestStatusEnum.PENDING.safe_name
     )
     staff_comment: str | None = None

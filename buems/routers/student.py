@@ -4,7 +4,7 @@ from typing import Annotated, Literal
 from fastapi import APIRouter, Depends, status
 from fastapi.params import Query
 from loguru import logger
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 from sqlalchemy.exc import NoResultFound
 from sqlmodel import Session, select
 from sqlmodel.sql.expression import Select
@@ -30,7 +30,11 @@ class ExeatRequestCreate(BaseModel):
         ..., description="End date and time for the leave request"
     )
     reason: str = Field(..., max_length=255, description="Reason for the leave request")
-
+    
+    @model_validator(mode="after")
+    def check_times(self):
+        if self.leave_start > self.leave_end:
+            raise ValueError("The time of `leave_start` cannot be ahead of `leave_end`.")
 
 @router.get("/exeat", response_model=PaginatedExeatsResponse)
 async def get_exeats(
@@ -53,7 +57,7 @@ async def get_exeats(
         ),
     ] = 20,  # Page size, default to 20, max 100
     _status: Annotated[
-        f"{ExeatRequestStatusEnum.type_string} | None",
+        str,
         Query(
             alias="status",
             description="The approval status of the exeats to be returned.",
